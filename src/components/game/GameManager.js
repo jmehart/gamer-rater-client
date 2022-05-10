@@ -37,9 +37,8 @@ export const createGame = (game) => {
         .then(response => response.json())
 }
 
-export const updateGame = (id, game) => {
-    return fetch(
-        `http://localhost:8000/games/${id}`, {
+export const updateGame = (gameId, game) => {
+    return fetch(`http://localhost:8000/games/${gameId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("gr_token")}`,
@@ -47,7 +46,6 @@ export const updateGame = (id, game) => {
         },
         body: JSON.stringify(game)
     })
-        .then(response => response.json())
 }
 
 export const deleteGame = (gameId) => {

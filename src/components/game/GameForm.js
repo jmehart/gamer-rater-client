@@ -171,10 +171,10 @@ export const GameForm = ( { editing }) => {
                         title: currentGame.title,
                         description: currentGame.description,
                         designer: currentGame.designer,
-                        numberOfPlayers: parseInt(currentGame.num_of_players),
-                        yearReleased: parseInt(currentGame.year_released),
-                        ageRec: parseInt(currentGame.age),
-                        estTimeMinutes: parseInt(currentGame.estimated_time),
+                        num_of_players: parseInt(currentGame.num_of_players),
+                        year_released: parseInt(currentGame.year_released),
+                        age: parseInt(currentGame.age),
+                        estimated_time: parseInt(currentGame.estimated_time),
                         categories: categoriesToAdd
                     }
 
