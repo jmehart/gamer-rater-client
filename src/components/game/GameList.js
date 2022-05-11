@@ -25,7 +25,7 @@ export const GameList = (props) => {
                         <div className="game__skillLevel">Age recommendation: {game.age}</div>
                         <div>
                             <button className="btn-edit" onClick={() => history.push(`/game/edit/${game.id}`)}>Edit</button>
-                        </div>
+                        </div><br></br>
                     </section>
                 })
             }

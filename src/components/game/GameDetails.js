@@ -26,7 +26,7 @@ export const GameDetails = () => {
         getGameRatings()
             .then(res => setGameRatings(res))
     }, [])
-    
+
     return (<>
         <h2>{game.title}</h2>
         <h4>Designer: {game.designer}</h4>
@@ -42,20 +42,25 @@ export const GameDetails = () => {
             }
         })}</h4>
         <h4>Average Rating: {game?.average_rating?.toFixed(2)}</h4>
-            <ul>
-        <h4>Reviews: {game.reviews?.map(rev => {
+        <ul>
+            <h4>Reviews: {game.reviews?.map(rev => {
                 return <li>{rev.review}</li>
             })}</h4>
-            </ul>
-        <button onClick={() => {history.push(`/games/upload_image/${gameId}`)}}>Upload image of this game</button>
-        <button onClick={event => {
-            event.preventDefault()
-            deleteGame(gameId)
-                .then(() => {history.push('/games')})
-        }
-        }>Delete Game</button>
+            <button onClick={() => history.push(`/games/${gameId}/review`)}>Review and Rate This Game</button>
+        </ul><br></br>
+        <div className="imageBtn">
+            <button onClick={() => { history.push(`/games/upload_image/${gameId}`) }}>Upload an Image For This Game</button>
+        </div><br></br>
+        <div className="deleteBtn">
+            <button onClick={event => {
+                event.preventDefault()
+                deleteGame(gameId)
+                    .then(() => { history.push('/games') })
+            }
+            }>Delete Game</button>
+        </div>
     </>
-    
-    
-    )    
+
+
+    )
 }
